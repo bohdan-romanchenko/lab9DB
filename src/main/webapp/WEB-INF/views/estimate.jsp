@@ -34,7 +34,8 @@
             <div class="form-row">
                 <label>
                     <span>BUDGETARY INSTITUTION</span>
-                    <input type="text" name="budgetaryInstitution" value="<c:out value="${estimate.budgetaryInstitution}" />"/>
+                    <input type="text" name="budgetaryInstitution"
+                           value="<c:out value="${estimate.budgetaryInstitution}" />"/>
                 </label>
             </div>
             <div class="form-row">

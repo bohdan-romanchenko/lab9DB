@@ -9,9 +9,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by gleb on 06.12.16.
- */
 @Service
 public class PaymentOrderService {
 

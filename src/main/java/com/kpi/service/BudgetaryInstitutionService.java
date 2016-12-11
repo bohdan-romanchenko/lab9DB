@@ -17,7 +17,7 @@ public class BudgetaryInstitutionService {
     @Autowired
     Connection connection;
 
-    public List<BudgetaryInstitution> getAll(){
+    public List<BudgetaryInstitution> getAll() {
         List<BudgetaryInstitution> budgetaryInstitutions = new ArrayList<BudgetaryInstitution>();
         try {
             Statement statement = connection.createStatement();
@@ -28,7 +28,7 @@ public class BudgetaryInstitutionService {
                 loadType.setName(rs.getString("name"));
                 budgetaryInstitutions.add(loadType);
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return budgetaryInstitutions;
@@ -46,14 +46,14 @@ public class BudgetaryInstitutionService {
                 budgetaryInstitution.setId((long) Integer.parseInt(rs.getString("id")));
                 budgetaryInstitution.setName(rs.getString("name"));
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.getStackTrace();
         }
 
         return budgetaryInstitution;
     }
 
-    public void update(BudgetaryInstitution budgetaryInstitution) throws SQLException{
+    public void update(BudgetaryInstitution budgetaryInstitution) throws SQLException {
 
         PreparedStatement preparedStatement = connection.prepareStatement(
                 "update BUDGETARY_INSTITUTION set name =? where id=?");
@@ -63,7 +63,7 @@ public class BudgetaryInstitutionService {
         preparedStatement.executeUpdate();
     }
 
-    public void insert(BudgetaryInstitution budgetaryInstitution)  throws SQLException{
+    public void insert(BudgetaryInstitution budgetaryInstitution) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement(
                 "INSERT INTO BUDGETARY_INSTITUTION(id, name) " +
                         "VALUES (?,?)");
@@ -73,7 +73,7 @@ public class BudgetaryInstitutionService {
         preparedStatement.executeUpdate();
     }
 
-    public void delete(Integer id) throws SQLException{
+    public void delete(Integer id) throws SQLException {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("delete from BUDGETARY_INSTITUTION where id=?");
         preparedStatement.setLong(1, id);
@@ -84,7 +84,7 @@ public class BudgetaryInstitutionService {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT MAX(id) FROM BUDGETARY_INSTITUTION");
         ResultSet rs = preparedStatement.executeQuery();
-        if(rs.next())
+        if (rs.next())
             return rs.getLong("MAX(id)");
         else
             return null;

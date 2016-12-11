@@ -2,7 +2,6 @@ package com.kpi.model;
 
 import lombok.Data;
 
-import java.util.Currency;
 import java.sql.Date;
 
 @Data

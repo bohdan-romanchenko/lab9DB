@@ -52,8 +52,7 @@ public class AppConf extends WebMvcConfigurerAdapter {
                     environment.getProperty("DB_PASSWORD"));
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return dbConnection;

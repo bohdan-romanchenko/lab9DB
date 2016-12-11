@@ -10,9 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.SQLException;
 
-/**
- * Created by gleb on 06.12.16.
- */
 @Controller
 @RequestMapping(value = "/paymentorder")
 public class PaymentOrderController {
